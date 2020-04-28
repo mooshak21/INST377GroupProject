@@ -1,0 +1,13 @@
+.header {
+    margin: 20px 50px;
+    padding: 0 20px;
+    min-height: 75px;
+    background: lightblue;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-transform: capitalize;
+    flex-wrap: nowrap;
+}
