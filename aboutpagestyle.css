@@ -1,3 +1,4 @@
+/*About page css */
 html, body {
     background-color: rgb(76, 115, 235);
     margin: 0;
@@ -21,16 +22,22 @@ html, body {
 }
 
 .content {
-    background: #fff;
-    border: 2px solid #444;
+    background: lightblue;
+    border: 2px solid rgba(5, 90, 160, 0.596);
     flex-grow: 2;
     flex: 0 0 200px;
     padding: 10px;
     overflow-wrap: break-word;
     margin: 25px 50px;
-    border-radius: 10px;
+    border-radius: 25px;
 }
 
+.team {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+
+}
 .teammembers {
     display: flex;
     justify-content: center;
@@ -38,4 +45,8 @@ html, body {
 .teampictures {
     display: flex;
     justify-content: space-around;
+}
+
+.names {
+    flex-direction: column;
 }
