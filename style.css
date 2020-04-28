@@ -2,6 +2,7 @@
     margin: 20px 50px;
     padding: 0 20px;
     min-height: 75px;
+    border: 2px solid rgba(8, 61, 104, 0.596);
     background: lightblue;
     display: flex;
     align-items: center;
@@ -20,4 +21,13 @@
     padding: 10px;
     overflow-wrap: break-word;
     margin: 25px 50px;
+}
+
+.teammembers {
+    display: flex;
+    justify-content: center;
+}
+.teampictures {
+    display: flex;
+    justify-content: space-around;
 }
