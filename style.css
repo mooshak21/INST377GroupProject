@@ -1,4 +1,12 @@
 /*About page css */
+
+
+@media screen and (max-width: 480px) {
+    html, body {
+      min-width: 320px; } }
+  html {
+    box-sizing: border-box; }
+
 .wrapper {
 display: flex;
 flex-direction: column;
@@ -8,6 +16,10 @@ html, body {
     background-color: rgb(76, 115, 235);
     margin: 0;
     padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 
 .container {
@@ -15,7 +27,7 @@ html, body {
     justify-content: center;
 }
 
-.button {
+/* .button {
     background-color: #8aa5f7;
     border-radius: 11px;
     border: 2px solid #4252af;
@@ -25,12 +37,13 @@ html, body {
     padding: 10px 17px;
     text-decoration: none;
     text-shadow: 0px 1px 1px #1e1455;
-}
+} */
 
 .header {
     margin: 20px 50px;
-    padding: 0 20px;
+    padding: 0 0px;
     min-height: 75px;
+    width: inherit;
     border: 2px solid rgba(5, 90, 160, 0.596);
     border-radius: 25px;
     background: lightblue;
@@ -41,7 +54,7 @@ html, body {
     font-size: 1.5em;
     text-transform: capitalize;
     flex-wrap: nowrap;
-    max-width: 600px;
+    max-width: inherit;
 }
 
 .content {
@@ -81,3 +94,33 @@ html, body {
     display: flex;
     flex-direction: column;
 }
+
+* Navbar container */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  font-family: Arial;
+}
+
+/* Links inside the navbar */
+.navbar a {
+  flex: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* The dropdown container */
+.dropdown {
+  flex: left;
+  overflow: hidden;
+}
+
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover {
+  background-color: red;
+}
+
