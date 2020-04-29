@@ -1,10 +1,19 @@
 /*About page css */
+.wrapper {
+display: flex;
+flex-direction: column;
+}
+
 html, body {
     background-color: rgb(76, 115, 235);
     margin: 0;
     padding: 0;
 }
 
+.container {
+    display: flex;
+    justify-content: center;
+}
 .header {
     margin: 20px 50px;
     padding: 0 20px;
@@ -19,17 +28,25 @@ html, body {
     font-size: 1.5em;
     text-transform: capitalize;
     flex-wrap: nowrap;
+    max-width: 600px;
 }
 
 .content {
+    align-items: center;
+}
+
+.text {
     background: lightblue;
     border: 2px solid rgba(5, 90, 160, 0.596);
+    border-radius: 25px;
+    display: flex;
     flex-grow: 2;
     flex: 0 0 200px;
     padding: 10px;
     overflow-wrap: break-word;
     margin: 25px 50px;
-    border-radius: 25px;
+    max-width: 600px;
+    font-size: 20px;
 }
 
 .team {
@@ -44,7 +61,7 @@ html, body {
 }
 .teampictures {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .names {
