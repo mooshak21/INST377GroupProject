@@ -25,13 +25,21 @@ flex-direction: column;
 }
 
 html, body {
-    background-color: rgb(76, 115, 235);
+    background-color: #659DBD;
     margin: 0;
     padding: 0;
     border: 0;
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
+}
+h1{
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    color:#F0BEA0 ;
+   
+    
 }
 
 .container {
@@ -40,13 +48,11 @@ html, body {
 }
 
 .header {
-    margin: 20px 50px;
-    padding: 0 0px;
-    min-height: 75px;
+    margin: 10px;
+    min-height: 40px;
     width: inherit;
-    border: 2px solid rgba(5, 90, 160, 0.596);
-    border-radius: 25px;
-    background: lightblue;
+    border: solid rgba(5, 90, 160, 0.596);
+    background:#659DBD;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -57,21 +63,69 @@ html, body {
     max-width: inherit;
 }
 
+.firstbox {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    
+}
+.aboutimg {
+    display: flex;
+    width: inherit; 
+    align-self: center;
+    justify-content: center;
+    align-content: center;
+    flex: center;
+    border-radius: 4px;
+    border: solid 5px black;
+    /* justify-content: space-between;  */
+    align-items: center;
+}
+img{
+    width: 500px;
+    height:300px;
+}
+.navbutton{
+    display:flex;
+    flex:left;
 
+}
+.navbutton2{
+    display:flex;
+    flex:right
 
-.text {
-    background: lightblue;
-    border: 2px solid rgba(5, 90, 160, 0.596);
-    border-radius: 25px;
+}
+
+.title {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 45px;
+    text-align: center;
+    color: #FFCC87;
+} 
+
+.text  {
     display: flex;
     flex-grow: 2;
     padding: 10px;
     overflow-wrap: break-word;
     margin: 25px 50px;
-    max-width: 600px;
+    width: inherit;
     font-size: 20px;
+   align-items: center;
+    justify-content: space-evenly;
     flex-direction: column;
 }
+ .text p {
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     text-align: center;
+     justify-content: space-evenly;
+ }
 
 .team {
     display: flex;
@@ -80,8 +134,10 @@ html, body {
 
 }
 .teammembers {
+    color: #99DBFF;
     display: flex;
-    justify-content: center;
+    justify-content: left;
+    padding: 10px;
 }
 .teampictures {
     display: flex;
@@ -97,7 +153,7 @@ html, body {
 /* Navbar container */
 .navbar {
   overflow: hidden;
-  background-color: #333;
+  background-color:transparent;
   font-family: Arial;
 }
 
@@ -105,22 +161,14 @@ html, body {
 .navbar a {
   flex: left;
   font-size: 16px;
-  color: white;
+  color: #FBEEC1;
   text-align: center;
   padding: 14px 16px;
-  text-decoration: none;
-}
+  }
 
-/* The dropdown container */
-.dropdown {
-  flex: left;
-  overflow: hidden;
-}
-
-
-/* Add a red background color to navbar links on hover */
+/* Highlighter on hover */
 .navbar a:hover {
-  background-color: red;
+  background-color: #DAAD86;
 }
 
 .howtouse {
