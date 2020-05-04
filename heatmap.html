@@ -1,16 +1,16 @@
 <html>
 <head>
   <title>A Leaflet map!</title>
-   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css"
-   integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ=="
-   crossorigin=""/>
-  <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"
-   integrity="sha512-A7vV8IFfih/D732iSSKi20u/ooOfj/AGehOKq0f4vLT1Zr2Y+RX7C+w8A1gaSasGtRUZpF/NZgzSAu4/Gc41Lg=="
-   crossorigin=""></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+  crossorigin=""/> 
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+  integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+  crossorigin=""></script>
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="leaflet.heat.js"></script>
   <style>
-    #map{ height: 100% }
+    #map{ height: 50% }
   </style>
 </head>
 <body>
@@ -19,29 +19,24 @@
  
   <script>
  
-  // initialize the map
-  var map = L.map('map').setView([42.35, -71.08], 13);
- 
-  // load a tile layer
-  L.tileLayer('http://tiles.mapc.org/basemap/{z}/{x}/{y}.png',
-    {
-      attribution: 'Tiles by <a href="http://mapc.org">MAPC</a>, Data by <a href="http://mass.gov/mgis">MassGIS</a>',
-      maxZoom: 17,
-      minZoom: 9
-    }).addTo(map);
-    
-  map.setZoom(12);
-  $.getJSON("rodents.geojson",function(data){
-    var locations = data.features.map(function(rat) {
-      // the heatmap plugin wants an array of each location
-      var location = rat.geometry.coordinates.reverse();
-      location.push(0.5);
-      return location; // e.g. [50.5, 30.5, 0.2], // lat, lng, intensity
-    });
+ var map = L.map('map').setView([38.7849, 76.8721], 13);
 
-    var heat = L.heatLayer(locations, { radius: 35 });
-    map.addLayer(heat);
-  });
+ L.tileLayer(
+          'https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', 
+          {
+            attribution: 
+              'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            maxZoom: 18,
+            id: 'mapbox/streets-v11',
+            tileSize: 512,
+            zoomOffset: -1,
+            accessToken: "pk.eyJ1Ijoib2JhbGxpdSIsImEiOiJjazl0MWMxMzgwM216M2VvemQ4bnFmazZqIn0.lR4GFkYrzLet1iA30Lmqhw"
+          }
+        ).addTo(mymap);
+
+L.marker([38.9936,-77.9452]).addTo(map)
+    .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+    .openPopup();
  
   </script>
 </body>
