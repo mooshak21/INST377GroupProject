@@ -1,43 +1,43 @@
 <html>
-<head>
-  <title>A Leaflet map!</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-  crossorigin=""/> 
-<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-  integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-  crossorigin=""></script>
-  <script src="https://raw.githubusercontent.com/pa7/heatmap.js/develop/plugins/leaflet-heatmap/leaflet-heatmap.js"></script>
-  <script src="node_modules/heatmap.js"> </script>
-  <script src="node_modules/leaflet-heatmap/leaflet-heatmap.js"></script>
-  <style>
-    #map{ height: 50% }
-  </style>
-</head>
-<body>
- 
-  <div id="map"></div>
- 
-  <script>
+  <head>
+    <title>A Leaflet map!</title>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      crossorigin=""
+    />
+    <script src="node_modules/heatmap.js"></script>
+    <script src="node_modules/leaflet-heatmap/leaflet-heatmap.js"></script>
+    <script
+      src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+      integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+      crossorigin=""
+    ></script>
+    <script src="https://raw.githubusercontent.com/pa7/heatmap.js/develop/plugins/leaflet-heatmap/leaflet-heatmap.js"></script>
 
-var map = L.map('map').setView([38.7849, 76.8721], 13);
-
-L.tileLayer(
-         'https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', 
-         {
-           attribution: 
-           'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
-           maxZoom: 18,
-           id: 'mapbox/streets-v11',
-           tileSize: 512,
-           zoomOffset: -1,
-           accessToken: "pk.eyJ1IjoibW9vc2hhazIxIiwiYSI6ImNrOG5yYmlpMjExcm8zanBndjdqaHJ4Zm4ifQ._SvQdft0B57l8Pi5MbAuig"
-         }
-       ).addTo(mymap);
-
-       L.marker([38.9936,-77.9452]).addTo(map)
-     .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-     .openPopup();
-  </script>
-</body>
+    <style>
+      #map {
+        height: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      mapboxgl.accessToken =
+        "pk.eyJ1IjoibW9vc2hhazIxIiwiYSI6ImNrOXQ0bmYxMDA2bmYzbW5kaGswYXhoNTcifQ.GHzCy5ZJ5HcjNhqF4JiXdw";
+      var map = new mapboxgl.Map({
+        container: "map", // container id
+        style: "mapbox://styles/mapbox/streets-v11", // stylesheet location
+        center: [-74.5, 40], // starting position [lng, lat]
+        zoom: 9, // starting zoom
+      });
+    </script>
+  </body>
 </html>
