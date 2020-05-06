@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lan="en">
+    <head>
+    </head>
+    <body>
+        <button class="save" onclick="clickMe();";>save</button>
+        <script>
+        var outGeoJson = []
+        fetch("foreclosuresjson.json")
+        .then((response) => response.json())
+        .then(data => {
+            console.log(data)
+            for (let i = 0; i < data.length; i++){
+            outGeoJson.push({
+                "type": "Feature",
+                "geometry": {"type": "Point", "coordinates": [data[i].Longitude, data[i].Latitude]},
+                "properties": data[i]
+                });
+            }
+            console.log(outGeoJson);
+            });
+
+        
+            
+            
+            
+            
+            
+            
+        </script>
+    </body>
+</html>
