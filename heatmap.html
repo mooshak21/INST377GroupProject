@@ -1,6 +1,7 @@
 <html>
   <head>
     <title>A Leaflet map!</title>
+    <link rel="stylesheet" href="style.css">  
     <script src="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js"></script>
     <link
       href="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css"
@@ -28,8 +29,10 @@
     </style>
   </head>
   <body>
-    <div id="map"></div>
-    <script>
+    <h1 class= "title">HeatMap of Foreclosures</h1> 
+          <!-- we need to put this into a container  -->
+     <div id="map"></div> 
+      <script>
       mapboxgl.accessToken =
         "pk.eyJ1IjoibW9vc2hhazIxIiwiYSI6ImNrOXQ0bmYxMDA2bmYzbW5kaGswYXhoNTcifQ.GHzCy5ZJ5HcjNhqF4JiXdw";
       var map = new mapboxgl.Map({
@@ -38,6 +41,8 @@
         center: [-76.945, 38.9936], // starting position [lng, lat]
         zoom: 9, // starting zoom
       });
+
+      
     </script>
   </body>
 </html>
