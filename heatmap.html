@@ -39,9 +39,39 @@
         container: "map", // container id
         style: "mapbox://styles/mapbox/streets-v11", // stylesheet location
         center: [-76.945, 38.9936], // starting position [lng, lat]
-        zoom: 9, // starting zoom
+        zoom: 13, // starting zoom
       });
+      fetch('./foreclosuresjson.json')
+      .then((response) => response.json())
+      .then(data => {
+        console.log(data)
+        const Marker1 = L.Marker().setLngLat(data[1].Coordinates.reverse()).addTo(map)
+        const propertyid = data[1].propertyid
+        Marker1.bindPopup(propertyid).openPopup();
 
+      });
+      // map.on('load', function () {
+      //   map.addSource('foreclosed', {
+      //     type: 'json', 
+      //     data: './pgcounty.json'
+      //   });
+      //   map.addLayer({
+      //     id: 'foreclosed-heat',
+      //     type: "heatmap",
+      //     source: 'foreclosed'
+      //   });
+      //   map.addLayer ({
+      //     id:'trees-point',
+      //     type:"circle",
+      //     source: 'foreclosed'
+      //   })
+      // });
+      // map.on('click', 'trees-point', function(e) {
+      //   new mapboxgl.Popup()
+      //   .setLngLat(e.Coordinates.reverse())
+      // } )
+
+      
       
     </script>
   </body>
