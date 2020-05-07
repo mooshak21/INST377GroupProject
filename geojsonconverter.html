@@ -4,21 +4,20 @@
     </head>
     <body>
         <script>
-            fetch("foreclosuresjson.json")
-            .then((response) => response.json())
-            .then(data => {
-                console.log(data) });
-            console.log(json)
-            var outGeoJson = {}
-            for (var i = 0; i < inJson.length; i++){
-                outGeoJson["properties"] = json[i]
-                outGeoJson["type"] = "Feature"
-                outGeoJson["geometry"]={
-                    "type": "Point", "coordinates": [json[i].Latitude, json[i].Longitude]
+        var outGeoJson = []
+        fetch("foreclosuresjson.json")
+        .then((response) => response.json())
+        .then(data => {
+            console.log(data)
+            for (let i = 0; i < data.length; i++){
+            outGeoJson.push({
+                "type": "FeatureCollection",
+                "geometry": {"type": "Point", "coordinates": [data[i].Longitude, data[i].Latitude]},
+                "properties": data[i]
+                });
             }
-            
-            }
-            console.log(outGeoJson)
+            console.log(outGeoJson);
+            });
         </script>
     </body>
 </html>

@@ -58,6 +58,17 @@
         new google.maps.LatLng(37.785, -122.437),
         new google.maps.LatLng(37.785, -122.435)
       ];
+      fetch("foreclosuresjson.json")
+        .then((response) => response.json())
+        .then(data => {
+            console.log(data)
+            for (let i = 0; i < data.length; i++){
+            heatmapData.push(
+              new google.maps.LatLng(data[i].Longitude, data[i].Latitude)
+              );
+            }
+            console.log(heatmapData);
+            });
 
       var geojson = {
               type: "FeatureCollection",
