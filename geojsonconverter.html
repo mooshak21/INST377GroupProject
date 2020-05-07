@@ -3,7 +3,6 @@
     <head>
     </head>
     <body>
-        <button class="save" onclick="clickMe();";>save</button>
         <script>
         var outGeoJson = []
         fetch("foreclosuresjson.json")
@@ -12,26 +11,13 @@
             console.log(data)
             for (let i = 0; i < data.length; i++){
             outGeoJson.push({
-                "type": "Feature",
+                "type": "FeatureCollection",
                 "geometry": {"type": "Point", "coordinates": [data[i].Longitude, data[i].Latitude]},
                 "properties": data[i]
                 });
             }
             console.log(outGeoJson);
-            var hiddenElement = document.createElement("a");
-            hiddenElement.href = 'data:attachment/text,' + encodeURI(outGeoJson);
-            hiddenElement.target = '_blank';
-            hiddenElement.download = 'geojson.geojson';
-            hiddenElement.click();
             });
-
-        
-            
-            
-            
-            
-            
-            
         </script>
     </body>
 </html>
