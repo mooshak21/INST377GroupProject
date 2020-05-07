@@ -1,0 +1,25 @@
+{
+  "name": "inst377groupproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "leaflet-heatmap": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mooshak21/INST377GroupProject.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mooshak21/INST377GroupProject/issues"
+  },
+  "homepage": "https://github.com/mooshak21/INST377GroupProject#readme"
+}
