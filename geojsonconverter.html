@@ -10,11 +10,9 @@
         .then(data => {
             console.log(data)
             for (let i = 0; i < data.length; i++){
-            outGeoJson.push({
-                "type": "FeatureCollection",
-                "geometry": {"type": "Point", "coordinates": [data[i].Longitude, data[i].Latitude]},
-                "properties": data[i]
-                });
+            outGeoJson.push(
+                "{location: new google.maps.LatLng" + "(" + data[i].Latitude + "," + " " + data[i].Longitude + ")" + ", weight: 3" + "}"
+                );
             }
             console.log(outGeoJson);
             });
