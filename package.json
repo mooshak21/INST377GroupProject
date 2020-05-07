@@ -4,8 +4,7 @@
   "description": "A sample webserver to pull UMD.io data and push it to a local page",
   "main": "server.js",
   "engines": {
-    "node": "14.2.0",
-    "npm": "6.14.4"
+    "node": "14.2.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
