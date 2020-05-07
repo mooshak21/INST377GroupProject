@@ -1,31 +1,33 @@
 {
-  "name": "inst377groupproject",
+  "name": "sample_server",
   "version": "1.0.0",
-  "description": "",
+  "description": "A sample webserver to pull UMD.io data and push it to a local page",
   "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec babel-node server.js"
+  },
+  "author": "Alex Leitch",
+  "license": "CC-BY-SA-4.0",
   "dependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.9.5",
+    "bulma": "^0.8.2",
+    "esm": "^3.2.25",
+    "esn": "^2.0.16",
     "express": "^4.17.1",
-    "leaflet-heatmap": "^1.0.0"
+    "node-fetch": "^2.6.0",
+    "sqlite": "^4.0.7",
+    "sqlite3": "^4.1.1",
+    "nodemon": "^2.0.3"
   },
   "devDependencies": {
     "eslint": "^6.5.1",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-html": "^6.0.0",
-    "eslint-plugin-import": "^2.18.2",
-    "nodemon": "^2.0.3"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mooshak21/INST377GroupProject.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/mooshak21/INST377GroupProject/issues"
-  },
-  "homepage": "https://github.com/mooshak21/INST377GroupProject#readme"
+    "eslint-plugin-import": "^2.18.2"
+    
+  }
 }
