@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>A Leaflet map!</title>
-    <link rel="stylesheet" href="style.css">  
+    <link rel="stylesheet" href="style.css" />
     <script src="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js"></script>
     <link
       href="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css"
@@ -21,7 +21,10 @@
       crossorigin=""
     ></script>
     <script src="https://raw.githubusercontent.com/pa7/heatmap.js/develop/plugins/leaflet-heatmap/leaflet-heatmap.js"></script>
-
+    <script
+      type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSRaf70vFXXQKdbO2tFIyWoy3liycB6-g&libraries=visualization"
+    ></script>
     <style>
       #map {
         height: 50%;
@@ -29,11 +32,42 @@
     </style>
   </head>
   <body>
-    <h1 class= "title">HeatMap of Foreclosures</h1> 
-          <!-- we need to put this into a container  -->
-     <div id="map"></div> 
-      <script>
-      mapboxgl.accessToken =
+    <h1 class="title">HeatMap of Foreclosures</h1>
+    <!-- we need to put this into a container  -->
+    <div id="map"></div>
+
+    <script>
+      var heatMapData = [
+  {location: new google.maps.LatLng(37.782, -122.447), weight: 0.5},
+  new google.maps.LatLng(37.782, -122.445),
+  {location: new google.maps.LatLng(37.782, -122.443), weight: 2},
+  {location: new google.maps.LatLng(37.782, -122.441), weight: 3},
+  {location: new google.maps.LatLng(37.782, -122.439), weight: 2},
+  new google.maps.LatLng(37.782, -122.437),
+  {location: new google.maps.LatLng(37.782, -122.435), weight: 0.5},
+
+  {location: new google.maps.LatLng(37.785, -122.447), weight: 3},
+  {location: new google.maps.LatLng(37.785, -122.445), weight: 2},
+  new google.maps.LatLng(37.785, -122.443),
+  {location: new google.maps.LatLng(37.785, -122.441), weight: 0.5},
+  new google.maps.LatLng(37.785, -122.439),
+  {location: new google.maps.LatLng(37.785, -122.437), weight: 2},
+  {location: new google.maps.LatLng(37.785, -122.435), weight: 3}
+];
+
+var sanFrancisco = new google.maps.LatLng(37.774546, -122.433523);
+
+map = new google.maps.Map(document.getElementById('map'), {
+  center: sanFrancisco,
+  zoom: 13,
+  mapTypeId: 'satellite'
+});
+
+var heatmap = new google.maps.visualization.HeatmapLayer({
+  data: heatMapData
+});
+heatmap.setMap(map);
+     /*  mapboxgl.accessToken =
         "pk.eyJ1IjoibW9vc2hhazIxIiwiYSI6ImNrOXQ0bmYxMDA2bmYzbW5kaGswYXhoNTcifQ.GHzCy5ZJ5HcjNhqF4JiXdw";
       var map = new mapboxgl.Map({
         container: "map", // container id
@@ -41,38 +75,72 @@
         center: [-76.945, 38.9936], // starting position [lng, lat]
         zoom: 13, // starting zoom
       });
-      fetch('./pgcounty.json')
-      .then((response) => response.json())
-      .then(data => {
-        console.log(data)
-        const Marker1 = L.Marker().setLngLat(data[1].Coordinates.reverse()).addTo(map)
-        const propertyid1 = data[1].propertyid
-        Marker1.bindPopup(propertyid1).openPopup();
+      var geojson = {
+        type: "FeatureCollection",
+        features: [
+          {
+            type: "Feature",
+            geometry: {
+              type: "Point",
+              coordinates: [-77.032, 38.913],
+            },
+            properties: {
+              title: "Mapbox",
+              description: "Washington, D.C.",
+            },
+          },
+          {
+            type: "Feature",
+            geometry: {
+              type: "Point",
+              coordinates: [-122.414, 37.776],
+            },
+            properties: {
+              title: "Mapbox",
+              description: "San Francisco, California",
+            },
+          },
+        ],
+      };
+      geojson.features.forEach(function (marker) {
+        // create a HTML element for each feature
+        var el = document.createElement("div");
+        el.className = "marker";
 
+        // make a marker for each feature and add to the map
+        new mapboxgl.Marker(el)
+          .setLngLat(marker.geometry.coordinates)
+          .addTo(map);
       });
-      // map.on('load', function () {
-      //   map.addSource('foreclosed', {
-      //     type: 'json', 
-      //     data: './pgcounty.json'
-      //   });
-      //   map.addLayer({
-      //     id: 'foreclosed-heat',
-      //     type: "heatmap",
-      //     source: 'foreclosed'
-      //   });
-      //   map.addLayer ({
-      //     id:'trees-point',
-      //     type:"circle",
-      //     source: 'foreclosed'
-      //   })
-      // });
-      // map.on('click', 'trees-point', function(e) {
-      //   new mapboxgl.Popup()
-      //   .setLngLat(e.Coordinates.reverse())
-      // } )
-
-      
-      
+      /* fetch("./pgcounty.json")
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          const Marker1 = L.Marker()
+            .setLngLat(data[1].Coordinates.reverse())
+            .addTo(map);
+          const propertyid1 = data[1].propertyid;
+          Marker1.bindPopup(propertyid1).openPopup();
+        });
+      map.on("load", function () {
+        map.addSource("foreclosed", {
+          type: "json",
+          data: "./pgcounty.json",
+        });
+        map.addLayer({
+          id: "foreclosed-heat",
+          type: "heatmap",
+          source: "foreclosed",
+        });
+        map.addLayer({
+          id: "trees-point",
+          type: "circle",
+          source: "foreclosed",
+        });
+      });
+      map.on("click", "trees-point", function (e) {
+        new mapboxgl.Popup().setLngLat(e.Coordinates.reverse());
+      }); */ 
     </script>
   </body>
 </html>
