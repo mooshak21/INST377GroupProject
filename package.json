@@ -4,7 +4,7 @@
   "description": "A sample webserver to pull UMD.io data and push it to a local page",
   "main": "server.js",
   "engines": {
-    "node": "14.2.0"
+    "node": "12.16.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -18,7 +18,7 @@
     "@babel/node": "^7.8.7",
     "@babel/preset-env": "^7.9.6",
     "express": "^4.17.1",
-    "node": "^14.2.0",
+    "node": "^12.6.2",
     "node-fetch": "^2.6.0",
     "sqlite": "^4.0.7",
     "sqlite3": "^4.2.0",
