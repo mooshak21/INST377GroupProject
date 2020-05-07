@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lan="en">
+    <head>
+    </head>
+    <body>
+        <script>
+            fetch("foreclosuresjson.json")
+            .then((response) => response.json())
+            .then(data => {
+                console.log(data) });
+            console.log(json)
+            var outGeoJson = {}
+            for (var i = 0; i < inJson.length; i++){
+                outGeoJson["properties"] = json[i]
+                outGeoJson["type"] = "Feature"
+                outGeoJson["geometry"]={
+                    "type": "Point", "coordinates": [json[i].Latitude, json[i].Longitude]
+            }
+            
+            }
+            console.log(outGeoJson)
+        </script>
+    </body>
+</html>

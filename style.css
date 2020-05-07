@@ -96,6 +96,7 @@ img{
 
 }
 
+
 .title {
     display:flex;
     flex-direction: column;
@@ -118,6 +119,8 @@ img{
    align-items: center;
     justify-content: space-evenly;
     flex-direction: column;
+    font-family: 'Work Sans', sans-serif;
+
 }
  .text p {
      display: flex;
