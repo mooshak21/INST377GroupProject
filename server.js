@@ -1,4 +1,4 @@
-/ These are our required libraries to make the server work.
+// These are our required libraries to make the server work.
 // We're including a server-side version of Fetch to build on your client-side work
 const express = require('express');
 const fetch = require('node-fetch');
