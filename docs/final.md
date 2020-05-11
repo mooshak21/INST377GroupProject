@@ -27,7 +27,7 @@ For our heatmap we chose to use PG County Foreclosed homes dataset
 Initally we wanted to create a heatmap that showed the concentration of the homes that were in PG County. Ideally, this website would give our stakeholders a list of homes that are on low priced. 
 
 ### Technical System 
-
+We decided to do what we did because we wanted to do something a little more than just a map with markers and a little more fancy.
 
 ## Final System
 Unfortunatley we believe that our system does not fully meet the needs of our stakeholders. We think that our dataset is limited in its information that is providing and it is unable to say if the foreclosed homes are actually low priced. We can only see the location of these properties and the property id. Because of this issue we are not able to help our first time home buyers
