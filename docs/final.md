@@ -8,7 +8,7 @@
 * **Justine Guloy** 
 
 ## Heroku Link 
-Instfjedhfjsh
+Heroku Link: (https://inst377finalproject.herokuapp.com/index.html)
 
 ### Information Problem 
 There is a lack of websites that give first time homebuyers a place where they can look and find foreclosed homes that are cheap. This websystem would allow first time homebuyers to find low-priced homes that were foreclosed.

@@ -20,6 +20,19 @@ app.use(express.json());
 app.use(express.static('public'));
 
 
+app.route('/api') 
+.get("/", function (req, res) {
+    res.send (' This is a response whena  get request is made')
+})
+.post('/' , function (req, res) {
+    res.send("POST request made ")
+})
+.put('/user' , function(req,res) {
+ res.send("Put request sent to /user")
+})
+
 app.get('/api', (req, res) => {processDataForFrontEnd(req, res)});
+
+
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

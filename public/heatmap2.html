@@ -93,7 +93,8 @@
       }
 
       // Heatmap data: 500 Points
-      function getPoints() {
+
+       function getPoints() {
         return [
           new google.maps.LatLng(38.789721, -76.995664),
           new google.maps.LatLng(39.029774, -76.923501),
@@ -311,6 +312,15 @@
           new google.maps.LatLng(38.766284, -76.87195),
         ];
       }
+
+      fetch ("./foreclosurejson.json") //this if it was in a server would load the data in the console. 
+        .then(function(resp) {
+            return resp.json();
+        })
+        .then (function(data) {
+          console.log(data);
+        }); 
+
     </script>
     <script
       async
