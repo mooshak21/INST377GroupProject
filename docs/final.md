@@ -4,7 +4,7 @@
 
 * **Olva Balliu** 
 * **Ray Domjan** 
-* **Mihri Gokhale** 
+* **Mihir Gokhale** 
 * **Justine Guloy** 
 
 ## Heroku Link 
