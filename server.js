@@ -22,7 +22,7 @@ app.use(express.static('public'));
 app.route("/api")
 .get((req, res) => {
     console.log(" Get Request Successful");
-    res.json(result);
+    res.send(result);
 })
 .post((req, res) => {
   console.log("/api post request", req.body);
@@ -49,7 +49,7 @@ app.route("/api")
     console.log("Put request succesful")
     .then((result) => {
       console.log(result);
-      res.json({"done" : "no errors"}); // simple mode
+      res.send("done"); // simple mode
     })
     .catch((err) => {
       console.log(err);
