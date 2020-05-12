@@ -42,7 +42,9 @@ For our project we faced a lot of challenges during development. Some of these c
 
 
 ## Future Work Directions with this problem 
-If we were to continue this problem, we would have found another dataset that had more informaiton for the foreclosed homes in the area. In that case, we would ideally create a heatmap showing the locations of these foreclosed homes. The heatmap would allow filtering abilities where the customers would be able to look by zipcode, property id and give back information based on the filters in a table form. 
+* If we were to continue this problem, we would have found another dataset that had more informaiton for the foreclosed homes in the area. In that case, we would ideally create a heatmap showing the locations of these foreclosed homes. The heatmap would allow filtering abilities where the customers would be able to look by zipcode, property id and give back information based on the filters in a table form.
+* What we also have done differently is that maybe instead of a heatmap we could have done markers, and if we were to click on a marker it would have taken us to show a view of the house and then maybe return a table with all the information.  
+
 
 
 
