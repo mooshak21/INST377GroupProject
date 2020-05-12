@@ -19,6 +19,44 @@ app.use(express.json());
 // And the ability to serve some files publicly, like our HTML.
 app.use(express.static('public'));
 
+app.route("/api")
+.get((req, res) => {
+    console.log(" Get Request Successful");
+    res.json(result);
+})
+.post((req, res) => {
+  console.log("/api post request", req.body);
+  if (!req.body.name) {
+    console.log(req.body);
+    res.status("418").send("something went wrong, additionally i am a teapot");
+  } else {
+    console.log("Post request sent")
+    .then((result) => {
+      console.log(result);
+      res.send("your request was successful"); // simple mode
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  }
+})
+.put((req,res) => { //put request to api
+  console.log("put request acessed", req.body); //console log statement to the route
+  if (!req.body.name) {
+    console.log(req.body);
+    res.status("418").send("something went wrong, additionally i am a teapot");
+  } else {
+    console.log("Put request succesful")
+    .then((result) => {
+      console.log(result);
+      res.json({"done" : "no errors"}); // simple mode
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  }
+
+});
 
 /* app.route('/api') 
 .get("/", function (req, res) {
