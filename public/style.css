@@ -193,7 +193,7 @@ img{
       #floating-panel {
         position: absolute;
         top: 80px;
-        left: 30%;
+        left: 40%;
         align-self: start;
         z-index: 5;
         background-color: #fff;
@@ -208,7 +208,7 @@ img{
         background-color: #fff;
         border: 1px solid #999;
         align-self: start;
-        left: 23%;
+        left: 40%;
         position: absolute;
         padding: 5px;
         top: 140px;

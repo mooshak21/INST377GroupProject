@@ -21,7 +21,7 @@ By creating this website, we wanted to target these stakeholders:
 * First time homebuyers like college students who are looking for cheap housing. 
 
 ## Data
-For our heatmap we chose to use PG County Foreclosed homes dataset 
+For our heatmap we chose to use PG County Foreclosed houses dataset 
 
 ### Strategies and Solutions to solve the problem
 Initally we wanted to create a heatmap that showed the concentration of the homes that were in PG County. Ideally, this website would give our stakeholders a list of homes that are on low priced. 
