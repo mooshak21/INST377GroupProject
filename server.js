@@ -20,7 +20,7 @@ app.use(express.json());
 app.use(express.static('public'));
 
 
-app.route('/api') 
+/* app.route('/api') 
 .get("/", function (req, res) {
     res.send (' This is a response whena  get request is made')
 })
@@ -31,7 +31,7 @@ app.route('/api')
  res.send("Put request sent to /user")
 })
 
-app.get('/api', (req, res) => {processDataForFrontEnd(req, res)});
+app.get('/api', (req, res) => {processDataForFrontEnd(req, res)}); */
 
 
 
