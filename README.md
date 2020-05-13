@@ -10,6 +10,7 @@ We are mostly targeting personal computers. However, this website can also be vi
 For the user manual please check [user.md](docs/user.md) file for details
 
 ### Developer Manual 
+For the developer manual please check [developer.md](docs/developer.md) file for details
 
 ## Installation process
 To make this application work you will need an environment where you will code HTML, CSS and Javascript. 
