@@ -1,4 +1,5 @@
 # PG COUNTY FORECLOSURES USER MANUAL
+This application can be used by you to look for houses that have been foreclosed. It can also be used to look at the house itself through zooming in the map that is provided.
 
 # About Page:
 This page outlines our goal for our application. It summarizes why we made our application and what you are able to do in our application.

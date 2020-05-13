@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lan="en">
+    <head>
+    </head>
+    <body>
+        <script>
+        var outGeoJson = []
+        fetch("foreclosuresjson.json")
+        .then((response) => response.json())
+        .then(data => {
+            console.log(data)
+            for (let i = 0; i < data.length; i++){
+            outGeoJson.push(
+                "{location: new google.maps.LatLng" + "(" + data[i].Latitude + "," + " " + data[i].Longitude + ")" + ", weight: 3" + "}"
+                );
+            }
+            console.log(outGeoJson);
+            });
+        </script>
+    </body>
+</html>
