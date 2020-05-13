@@ -116,16 +116,27 @@ img{
 
 .text  {
     display: flex;
-    flex-grow: 2;
+    flex-grow: 1;
     padding: 10px;
     overflow-wrap: break-word;
-    margin: 25px 50px;
-    width: inherit;
+    margin: 30px 10px 10px 10px;
     font-size: 20px;
-   align-items: center;
-    justify-content: space-evenly;
+    align-items: center;
     flex-direction: column;
     font-family: 'Work Sans', sans-serif;
+
+    
+}
+
+.maintext  {
+        display: flex;
+        text-align: center;
+        padding: 10px;
+        margin: 25px 50px;
+        font-size: 20px;
+        align-items: center;
+        flex-direction: column;
+        font-family: 'Work Sans', sans-serif;
 
 }
  .text p {
