@@ -19,10 +19,24 @@ app.use(express.json());
 // And the ability to serve some files publicly, like our HTML.
 app.use(express.static('public'));
 
+
+async function processDataForFrontEnd(req, res) {
+  const baseURL = "https://data.princegeorgescountymd.gov/resource/mnie-hrv7.json"; 
+
+  // Your Fetch API call starts here
+  const response = await fetch(baseURL);
+  const data = await response.json();
+  return data;
+}
+
+
 app.route("/api")
 .get((req, res) => {
-    console.log(" Get Request Successful");
+  (async () => {
+    const result = await processDataForFrontEnd(req, res);
+    console.log("Expected result", result);
     res.send(result);
+  })()
 })
 .post((req, res) => {
   console.log("/api post request", req.body);
